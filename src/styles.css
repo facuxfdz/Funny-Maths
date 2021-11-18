@@ -1,0 +1,14 @@
+.banner {
+    background-image: url(../public/banner.png);
+    background-position: center;
+    height: 75vh;
+}
+
+.down-banner {
+    background-color: rgb(250, 172, 168,.9);
+    height: 10vh;
+}
+
+.main-text {
+    text-shadow: 1px 1px 4px black;
+}
