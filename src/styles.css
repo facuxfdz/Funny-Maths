@@ -12,3 +12,15 @@
 .main-text {
     text-shadow: 1px 1px 4px black;
 }
+
+.page-section {
+    margin: 10rem 0;
+}
+
+.btn-main {
+    background-color: red;
+}
+
+.card {
+    width: 18rem;
+}
