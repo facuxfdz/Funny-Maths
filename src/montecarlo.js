@@ -1,3 +1,7 @@
+let circlePoints = 0
+let totalPoints = 0
+let pi = 0
+
 $(() => {
     $("#back-to-home").on('click', () => {
         window.location.href = "home.html"
@@ -8,10 +12,60 @@ $(() => {
     ctx.arc(150,150,150,0,2 * Math.PI)
     ctx.stroke()
 
-    canvasCircle.on('click', e => {
-        let rect = canvasCircle[0].getBoundingClientRect()
-        let x = e.clientX - rect.left
-        let y = e.clientY - rect.top
-        console.log(`x: ${x}\n y:${y}`)
+    $("#main-montecarlo").append(`
+        <div class='form-group d-flex flex-column align-items-center justify-content-center'>
+            <label for='amount'>Cantidad de puntos aleatorios a agregar</label>
+            <input class='my-3 form-control w-50' id='amount' type='number'></input>
+            <button class='btn btn-outline-success' id='sendPoints'>Agregar puntos</button>
+        </div>
+    `)
+    $("#main-montecarlo").append(`<h2 id='pi'>PI = ${pi}</h2>`)
+
+    $("#sendPoints").on('click', () => {
+        const amountToDraw = $("#amount").val()
+        let x
+        let y
+        const sign = [-1,1]
+        for(let i=0;i<amountToDraw;i++){
+            x = Math.random()*150 * sign[Math.floor(Math.random() * sign.length)]
+            y = Math.random()*150 * sign[Math.floor(Math.random() * sign.length)]
+            const ctx = $("#circle")[0].getContext('2d')
+            drawCoordinates(x,y,ctx)              
+        }
+
+
     })
+
 })
+
+
+const drawCoordinates = (x,y,ctx) => {
+    
+    setTimeout(() => {
+
+        const drawX = 150 - x
+        const drawY = 150 - y
+        
+        const pointSize = 3
+
+        ctx.fillStyle = '#ff2626'
+        
+        ctx.beginPath()
+        ctx.arc(drawX,drawY,pointSize,0,2*Math.PI,true)
+        ctx.fill()
+        const realX = parseFloat('0.' + (x+"").split('.')[1])
+        const realY = parseFloat('0.' + (y+"").split('.')[1])
+        const distance = Math.pow(realX,2) + Math.pow(realY,2)
+
+        if(distance <= 1){
+            circlePoints += 1
+        }
+        
+        totalPoints += 1 
+        
+        pi = 4*circlePoints/totalPoints 
+
+        $("#pi").html(`<h2>PI = ${pi}</h2>`)
+    },1000)
+
+}
