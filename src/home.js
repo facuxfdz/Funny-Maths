@@ -4,3 +4,7 @@ $(() => {
     const usernameDiv = $('#username')
     usernameDiv.append(`<h2 class='text-light main-text'>Bienvenide ${username}</h2>`)
 })
+
+$("#montecarlo").on('click', () => {
+    window.location.href = "montecarlo.html"
+})
