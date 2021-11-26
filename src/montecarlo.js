@@ -18,15 +18,15 @@ $(() => {
         }
     })
 
+    // GO TO HOME REDIRECT
     $("#back-to-home").on('click', () => {
         window.location.href = "home.html"
     })
-    const canvasCircle = $("#circle")
-    const ctx = canvasCircle[0].getContext('2d')
-    ctx.beginPath()
-    ctx.arc(150,150,150,0,2 * Math.PI)
-    ctx.stroke()
 
+    // DRAW CANVAS WHEN THE POINTS WILL BE DRAWN
+    drawCanvas()
+
+    // RENDER 'ADD' BUTTON
     $("#main-montecarlo").append(`
         <div class='form-group d-flex flex-column align-items-center justify-content-center'>
             <label for='amount'>Cantidad de puntos aleatorios a agregar</label>
@@ -34,8 +34,11 @@ $(() => {
             <button class='btn btn-outline-success' id='sendPoints'>Agregar puntos</button>
         </div>
     `)
+
+    // RENDER PI VALUE
     $("#main-montecarlo").append(`<h2 id='pi'>PI = ${pi}</h2>`)
 
+    // HANDLE CLICK
     $("#sendPoints").on('click', () => {
         const amountToDraw = $("#amount").val()
         let x
@@ -52,6 +55,14 @@ $(() => {
     })
 
 })
+
+const drawCanvas = () => {
+    const canvasCircle = $("#circle")
+    const ctx = canvasCircle[0].getContext('2d')
+    ctx.beginPath()
+    ctx.arc(150,150,150,0,2 * Math.PI)
+    ctx.stroke()
+}
 
 
 const drawCoordinates = (x,y,ctx) => {
