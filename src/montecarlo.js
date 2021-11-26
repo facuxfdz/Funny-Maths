@@ -3,6 +3,21 @@ let totalPoints = 0
 let pi = 0
 
 $(() => {
+
+    // AJAX call
+    // RESTRICTED API KEY
+    const YOUTUBEAPIURL =  "https://www.googleapis.com/youtube/v3/search?q=montecarlo-maths&key=AIzaSyBEOh5dbQTcb08o99wM8S4uWCNtkyHwbGs"
+    $.ajax({
+        method: "GET",
+        url: YOUTUBEAPIURL,
+        success: (res) => {
+            
+            $("#main-montecarlo").append(`
+                <a class='btn btn-outline-danger my-5' target='_blank' href='https://youtube.com/watch?v=${res.items[0].id.videoId}'>Ver video relacionado</a>
+            `)
+        }
+    })
+
     $("#back-to-home").on('click', () => {
         window.location.href = "home.html"
     })
