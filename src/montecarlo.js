@@ -31,7 +31,7 @@ $(() => {
         <div class='form-group d-flex flex-column align-items-center justify-content-center'>
             <label for='amount'>Cantidad de puntos aleatorios a agregar</label>
             <input class='my-3 form-control w-50' id='amount' type='number'></input>
-            <button class='btn btn-outline-success' id='sendPoints'>Agregar puntos</button>
+            <button class='btn btn-outline-success my-4' id='sendPoints'>Lanzar puntos al tablero</button>
         </div>
     `)
 

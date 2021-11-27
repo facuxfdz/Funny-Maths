@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Funny Maths</title>
 </head>
+
 <body>
     <header>
         <div class="container d-flex justify-content-center align-items-center bg-light">
@@ -17,11 +19,39 @@
 
     <main id="main-montecarlo" class="container d-flex flex-column align-items-center p-5">
         <h1>El problema de montecarlo</h1>
-        <section class="my-5">
+        <section class="my-5 text-center">
+            <p>
+                El método Monte Carlo (método Monte Carlo), también conocido como método de simulación estadística, es
+                un tipo muy importante de método de cálculo numérico guiado por la teoría estadística de probabilidad.
+                Se refiere al uso de números aleatorios (o más comúnmente números pseudoaleatorios) para resolver muchos
+                problemas de cálculo.
+                
+                <p>
+                El área de la plaza es: <b>2&times; 2r=4r&sup2;</b>
+                </p>
+            </p>    
+                <p>
+                El área del círculo es: <b>π r&sup2;</b>
+                </p>
+            <p>
+                <p>
+                El área del círculo es más grande que la del cuadrado: <b>π / 4</b>
+                </p>
+                Por lo tanto, utilizamos el método de Monte Carlo para distribuir aleatoriamente los puntos en el
+                cuadrado. <b><i>Los puntos que caen en el círculo / los puntos que caen en el cuadrado (todos los puntos)</i></b> son
+                aproximadamente iguales al <b><i>área del círculo / el área del cuadrado = π / 4</i></b>
+            </p>
+
+            <p class="text-danger my-5 bg-light shadow-lg"><i>
+                
+                Puedes probar la siguiente simulación eligiendo la cantidad de puntos que quieras probar y estos serán lanzados de manera aleatoria sobre el siguiente tablero. A medida que se dibujan los puntos se irá actualizando el valor aproximado de <b>π</b> en base a los cálculos realizados.
+            </i>
+            </p>
             <canvas class="border border-dark" width="300px" height="300px" id="circle"></canvas>
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="src/montecarlo.js"></script>
 </body>
+
 </html>
