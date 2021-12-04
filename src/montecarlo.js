@@ -35,8 +35,8 @@ $(() => {
         </div>
     `)
 
-    // RENDER PI VALUE
-    $("#main-montecarlo").append(`<h2 id='pi'>PI = ${pi}</h2>`)
+    // FIRST RENDER PI VALUE
+    $("#main-montecarlo").append(`<h2 id='pi'>&#x3C0; &#8776; ${pi}</h2>`)
 
     // HANDLE CLICK
     $("#sendPoints").on('click', () => {
@@ -91,7 +91,7 @@ const drawCoordinates = (x,y,ctx) => {
         
         pi = 4*circlePoints/totalPoints 
 
-        $("#pi").html(`<h2>PI = ${pi}</h2>`)
+        $("#pi").html(`<h2>&#x3C0; &#8776; ${pi}</h2>`)
     },1000)
 
 }
